@@ -11,7 +11,7 @@ The goals / steps of this project are the following:
 Source code provided by "CarND-Path-Planning-Project" was used as base for this project and UDACITY term3_sim was used to check the code performance. 
 
 ### Modifications
-File main.cpp was modified to implement this project. Majority of the changes are part of "int main()" function and a new function "vector<int> successor_lane(int curr_lane)". Code for this project can be found [here relative link](./src)
+File main.cpp was modified to implement this project. Majority of the changes are part of "int main()" function and a new function "vector<int> successor_lane(int curr_lane)". Code for this project can be found [here ](./src)
 
 ### Development Steps and Code Flow
 I have started with code shown in Project Walkthrough video. I have implemented a strategy to check the adjacent lanes for vehicles very close to the EGO Vehicle before changing the lanes. 
@@ -19,7 +19,7 @@ I have started with code shown in Project Walkthrough video. I have implemented 
 #### Overview:
 To drive the vehicle autonomously simulator expects a set of points with X,Y coordinates to be sent to it. I send 50 coordinates each time simulator waits for inputs from code. 
 
-Simulator provides list of coordinates that are not yet used , when the simulator is started this list will not have any values, so current car position and previous position that is tangential to current car poistion are used as starting point. If it is not the starting point then last 2 coordinates in the list provided by the simulator as used as starting point. Source Code Line No 381- 411 implement this. 
+Simulator provides list of coordinates that are not yet used , when the simulator is started this list will not have any values, so current car position and previous position that is tangential to current car poistion are used as starting point. If it is not the starting point then last 2 coordinates in the list provided by the simulator as used as starting point. Source [Code Lines ](https://github.com/rakeshakkineni/Term3_P1_CarND_Path_Planning_Project/blob/7e063713a8087a61541ecd066b9dcef0246c3db4/src/main.cpp#L385-L421) implement this. 
 
 To the starting point list 3 additional points that are at 30,60,90 meters away from current car S coordinates are added, here Lane information is also used, the resultant list is transformed to vehicle coordinates. Source Code Line No 413- 423 implement this. 
 
