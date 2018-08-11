@@ -6,16 +6,6 @@ The goals / steps of this project are the following:
 * Modify the code to design a path planner that is able to create smooth, safe paths for the car to follow along a 3 lane highway with traffic.
 * Car should drive smoothly , should not collide with vehciles , should be able to change lanes in slow traffic situation and should not exceed the speed limit. 
 
-
-[//]: # (Image References)
-
-[image1]: ./Output/Graphical_Image.png 
-[image2]: ./Output/Px_RMSE.png 
-[image3]: ./Output/Py_RMSE.png
-[image4]: ./Output/Vx_RMSE.png
-[image5]: ./Output/Vy_RMSE.png
-
-
 ---
 ### Writeup / README
 Source code provided by "CarND-Path-Planning-Project" was used as base for this project and UDACITY term3_sim was used to check the code performance. 
@@ -54,24 +44,10 @@ A variable ref_vel is used for controling the vehicle speed and a maximum limit 
 #### Rubic: Max Acceleration and Jerk are not Exceeded
 Vehicle always starts from 0 vehicle speed, to avoid jerky movement vehicle speed is slowly increased. This control implemented on each generated waypoint. Speed is increased/ decreased by only 0.224m/s each time. An increment or decrement of speed by 0.224m/s does not exceed the 10m/s^2 limit of acceleration. Line number 462-469 implements this. 
 
-#### Rubic: Max Acceleration and Jerk are not Exceeded
+#### Rubic: MCar does not have collisions and The car is able to change lanes
+To avoid any collisions in each cycle all the cars in current lane are searched and if there is a vehicle with in 30mts of EGO vehicle then speed of EGO Vehicle speed is reduced. Line number 278 -297 implements this. 
+When a Lane change is required first the indented new lane is searched for vehicles and lane change is done only if there is no vehicle with in 30mts infront and 10mts in rare of the vehicle in the new lane. Line number 299-372 implements this. 
 
-### Output
-Kalman Filter was able to estimate the position of the vehicle. 
+#### Rubic: The car is able to drive at least 4.32 miles without incident and The car stays in its lane, except for the time between changing lanes.
+Refer the attached video.
 
-- In the following picture the estimated path followed by the vehicle is in green. 
-
-![alt text][image1]
-
-- RMSE for each scan is printed in a text file. Using the printed data graphs were ploted to understand the trend of the RMSE for each parameter. 
-
-![alt text][image2]
-
-![alt text][image3]
-
-![alt text][image4]
-
-![alt text][image5]
-
-## Result:
-Initially all the parameters start with a huge RMSE value but eventually RMSE values for all the parameters fall below Rubics criteria. 
