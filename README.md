@@ -11,7 +11,7 @@ The goals / steps of this project are the following:
 Source code provided by "CarND-Path-Planning-Project" was used as base for this project and UDACITY term3_sim was used to check the code performance. 
 
 ### Modifications
-File main.cpp was modified to implement this project. Majority of the changes are part of "int main()" function and a new function "vector<int> successor_lane(int curr_lane)". Code for this project can be found [here] ("./Term3_P1_CarND_Path_Planning_Project/src")
+File main.cpp was modified to implement this project. Majority of the changes are part of "int main()" function and a new function "vector<int> successor_lane(int curr_lane)". Code for this project can be found [here relative link](./src)
 
 ### Development Steps and Code Flow
 I have started with code shown in Project Walkthrough video. I have implemented a strategy to check the adjacent lanes for vehicles very close to the EGO Vehicle before changing the lanes. 
