@@ -51,5 +51,8 @@ To avoid any collisions in each cycle all the cars in current lane are searched 
 When a Lane change is required first the indented new lane is searched for vehicles and lane change is done only if there is no vehicle with in 30mts infront and 10mts in rare of the vehicle in the new lane. [Line number](https://github.com/rakeshakkineni/Term3_P1_CarND_Path_Planning_Project/blob/7e063713a8087a61541ecd066b9dcef0246c3db4/src/main.cpp#L319-L348) implements this. 
 
 #### Rubic: The car is able to drive at least 4.32 miles without incident and The car stays in its lane, except for the time between changing lanes.
-Refer the attached video.
+Refer the attached [video](./output).
 
+### Limitations
+- Code currently has prefrence to shift to Left lane even when Right lane is free ,in some situations, from Middle lane
+- If another car moves from next lane to EGO Vehicle lane in some scenarios it might collide with EGO Vehicle.
