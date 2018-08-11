@@ -38,6 +38,8 @@ Source [Code Lines](https://github.com/rakeshakkineni/Term3_P1_CarND_Path_Planni
 "succesor_lane" function does not check if there any vehicles very close to current vehicle position in the function lanes. To check if there are any cars in these next lanes Sensor_Fusion data is used and closest vehicle in the front and rear of the EGO vehicle in the next lanes are identified all this comparision is done in Fernet Coordinates, for all this calculation current S position of the EGO Vehicle is used. Lane with largest gap and no vehicle with in 30mts in the front and 10mts in rear is select as next lane. If there is no there is no lane that matches these requirements EGO Vehicle shall continue to be in the same lane. The points that are generated at 30,60,90mts use the lane information for generating X,Y coordinates. 
 Source [Code Lines](https://github.com/rakeshakkineni/Term3_P1_CarND_Path_Planning_Project/blob/7e063713a8087a61541ecd066b9dcef0246c3db4/src/main.cpp#L308-L382) implement this. 
 
+To avoid double lane change 500msec delay is added after lane a change request. 
+
 #### Rubic: The car drives according to the speed limit
 A variable ref_vel is used for controling the vehicle speed and a maximum limit of 49Mi/h is set. ref_vel is used in generating the spline points. [Line number](https://github.com/rakeshakkineni/Term3_P1_CarND_Path_Planning_Project/blob/7e063713a8087a61541ecd066b9dcef0246c3db4/src/main.cpp#L476) implements this. 
 
